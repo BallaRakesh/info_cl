@@ -161,7 +161,7 @@ def moco_train(
 
 
     # Save the model after all epochs
-    output_dir = "/home/ng6281/Rupankar_Dev/gopal/rakesh/code/Continual_learning_poc/InfoCL/model_save/fast_model"  # or args.output_dir
+    output_dir = "../model_save/fast_model"  # or args.output_dir
     os.makedirs(output_dir, exist_ok=True)
     # If using HuggingFace model
     try:

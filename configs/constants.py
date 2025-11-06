@@ -1,6 +1,20 @@
 use_custom_train_test_split = True
 
-manual_task_plan = { 
+# ===== Incremental Training Configuration =====
+# These paths are used when continuing training with new samples
+
+# Path to pre-trained model directory (contains config.json and model.safetensors)
+my_model = "/home/ntlpt19/TF_testing_EXT/dummy_data/lic_data/model_save/slow_model"
+
+# Path to previous memory data file (e.g., memory_data_5.pkl from last task)
+memory_path = '/home/ntlpt19/TF_testing_EXT/dummy_data/lic_data/model_save/memory_data_5.pkl'
+
+save_dir = "../model_save"
+# Key for new task in manual_task_plan (e.g., "itr7" for the 7th iteration)
+# This will be loaded automatically, or can be overridden from command line
+new_task_key = "itr7"
+
+manual_task_plan = {
     "itr1": [
         "Disputes concerning eligibility of surrender value",
         "Response for processing or payment of Policy Loan is not sent",

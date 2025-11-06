@@ -1,26 +1,5 @@
 [
-    "Non-receipt of Premium receipt",
-    "Requirements for revival not communicated or raised",
-    "Response for processing or payment of Policy Loan is not sent ",
-    "Alteration in policy not effected.",
-    "Request for Servicing Branch transfer is not effected",
-    "No Response for noting a new nomination ",
-    "Payment of premium not acted upon or wrongly acted upon",
-    "Response for issuance of duplicate policy is not sent ",
-    "After submission of all reinstatement (revival) requirements",
-    "Statement of account not received",
-    "Policy Benefit option not effected",
-    "Dispute concerning statement of account or premium position statement",
-    "Reinstatement requirements raised by Insurer not acceptable",
-    "No Response for recording Change of address ",
-    "Non-receipt of Duplicate policy",
-    "Annuity/pension instalments not paid",
-    "Survival Benefit is not paid ",
-    "Disputes concerning eligibility of surrender value",
-    "Surrender Value not paid",
-    "Non-payment of penal interest ",
-    "Disputes concerning correctness of surrender value",
-    "Dispute concerning claim value",
-    "Commutation value/cash option not paid",
-    "Maturity claim is not paid "
-  ]
+  "Alteration in policy not effected.",
+  "After submission of all reinstatement (revival) requirements",
+  "Dispute concerning statement of account or premium position statement"
+]

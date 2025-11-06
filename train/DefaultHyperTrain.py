@@ -247,8 +247,8 @@ def default_hyper_train(
                 cur_memory_labels.append(tmp_memory_labels)
             logger.info("<<<<<<<<<<<<<<<<< Updated Memory >>>>>>>>>>>>>>>>>")
 
-            memory_save_dir = "/home/ng6281/Rupankar_Dev/gopal/rakesh/code/Continual_learning_poc/InfoCL/model_save"
-            save_path = f"/home/ng6281/Rupankar_Dev/gopal/rakesh/code/Continual_learning_poc/InfoCL/model_save/memory_data_{task_id}.pkl"
+            memory_save_dir = "../model_save"
+            save_path = f"../model_save/memory_data_{task_id}.pkl"
             
             os.makedirs(memory_save_dir, exist_ok=True)
             

@@ -3,13 +3,14 @@ from transformers import AutoTokenizer, AutoConfig
 from model import (
     BertForSentenceClassification,
     BertMoCoForSentenceClassification,
+    BertMoCoForSentenceClassificationDistbert
 )
 
 import json
 import os
 from transformers import AutoTokenizer, AutoConfig
 
-model_dir = "/home/ntlpt19/Desktop/TF_release/extraction_modeling/main/genai_poc/main/lic_poc/InfoCL/model_save/fast_model"
+model_dir = "/home/ntlpt19/Desktop/TF_release/extraction_modeling/main/genai_poc/main/lic_poc/model_save/slow_model"
 
 # ---- Load raw config.json manually ----
 config_path = os.path.join(model_dir, "config.json")
@@ -40,13 +41,29 @@ if isinstance(config.global_args, dict):
 # -------------------------
 # 4. Load model
 # -------------------------
-model = BertMoCoForSentenceClassification.from_pretrained(model_dir, config=config)
+model = BertMoCoForSentenceClassificationDistbert.from_pretrained(model_dir, config=config)#, ignore_mismatched_sizes=True)
 model.eval()
 
 # -------------------------
 # 5. Prepare text for inference
 # -------------------------
-sentence = "I want to update my LIC policy details."
+sentence = """From: Priya Sharma [priyasharma@gmail.com]
+Date: 15 October 2024
+Subject: Discrepancy in Premium Payment Statement
+
+Dear Customer Service,
+
+I hope this email finds you well. I am writing to express my concern regarding my policy number 987654321. I recently received my premium payment statement, and I noticed that my payments for the last two quarters have not been accurately reflected. 
+
+According to my records, I made payments of Rs 5,000 on 15th July 2024 and Rs 5,000 on 15th September 2024, but these amounts are missing from the statement you provided. I rely on this statement for my tax records, and it is crucial that it reflects the correct payment history.
+
+I would appreciate it if you could look into this matter urgently and provide me with an updated statement that accurately reflects all my payments. Thank you for your attention to this issue.
+
+Best regards,
+Priya Sharma
+Mobile: 9876543210
+
+"""
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased", use_fast=True)
 inputs = tokenizer(
     sentence,

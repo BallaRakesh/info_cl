@@ -186,7 +186,7 @@ def new_old_train(
 
 
     # Save the model after all epochs
-    output_dir = "/home/ng6281/Rupankar_Dev/gopal/rakesh/code/Continual_learning_poc/InfoCL/model_save/slow_model"  # or args.output_dir
+    output_dir = "../model_save/slow_model"  # or args.output_dir
     os.makedirs(output_dir, exist_ok=True)
     # If using HuggingFace model
     try:
@@ -195,3 +195,20 @@ def new_old_train(
         print(e)
     model.save_pretrained(output_dir)
     progress_bar.close()
+
+
+
+'''
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ntlpt19/env_ml_ops/lib/python3.11/site-packages/transformers/modeling_utils.py", line 3502, in from_pretrained
+    ) = cls._load_pretrained_model(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ntlpt19/env_ml_ops/lib/python3.11/site-packages/transformers/modeling_utils.py", line 3977, in _load_pretrained_model
+    raise RuntimeError(f"Error(s) in loading state_dict for {model.__class__.__name__}:\n\t{error_msg}")
+RuntimeError: Error(s) in loading state_dict for BertMoCoForSentenceClassificationDistbert:
+        size mismatch for queue: copying a param with shape torch.Size([240, 768]) from checkpoint, the shape in current model is torch.Size([384, 768]).
+        size mismatch for queue_labels: copying a param with shape torch.Size([240]) from checkpoint, the shape in current model is torch.Size([384]).
+
+we get this error when we load the model 
+need to fix this error by changing the saving model code
+'''

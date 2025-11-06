@@ -12,7 +12,8 @@ task_args:
   class_per_task: 4
   # model_arch: "BertForRelationExtraction"
   model_arch: "BertForSentenceClassification"
-
+  new_task_key : "itr7"
+  
 model_args:
   # ModelArguments
   # model_name_or_path: "bert-base-uncased"
@@ -74,8 +75,8 @@ training_args:
   new_old_lambda: 0.1
   report_freq: 10
   seed: 2021
-  device: "cuda:0"
-  # device: "cpu"
+  # device: "cuda:0"
+  device: "cpu"
   debug: False
 
 
