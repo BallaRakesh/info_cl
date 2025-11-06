@@ -105,7 +105,7 @@ def main(cfg: DictConfig):
     logger.info("Incremental Training Results")
     logger.info("=" * 80)
     logger.info(f"New task performance: {results['new_task_performance']:.3f}%")
-    logger.info(f"Overall performance: {results['overall_performance']:.3f}%")
+    # logger.info(f"Overall performance: {results['overall_performance']:.3f}%")
     logger.info(f"Updated model saved to: {results['model_path']}")
     logger.info(f"Updated memory saved to: {results['memory_path']}")
     logger.info(f"Next task ID will be: {results['new_task_id'] + 1}")
